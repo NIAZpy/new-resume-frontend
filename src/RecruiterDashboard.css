@@ -1,0 +1,131 @@
+.dashboard-container {
+  padding: 40px;
+  background-color: #f0f2f5;
+  min-height: calc(100vh - 70px);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.dashboard-header h1 {
+  margin: 0;
+}
+
+.post-job-button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 12px 20px;
+  border-radius: 5px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.post-job-button:hover {
+  background-color: #0056b3;
+}
+
+.dashboard-main {
+  background-color: #fff;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.dashboard-main h2 {
+  margin-top: 0;
+  margin-bottom: 20px;
+}
+
+/* --- Grid Layout --- */
+.job-postings-list {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 25px;
+}
+
+.job-posting-item {
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  padding: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  transition: all 0.2s ease-in-out;
+  min-height: 180px;
+}
+
+.job-posting-item:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+}
+
+.job-info h3 {
+  margin: 0 0 8px 0;
+  font-size: 1.1rem;
+}
+
+.job-info p {
+  margin: 0;
+  color: #666;
+  font-size: 0.9rem;
+}
+
+.job-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 20px;
+  justify-content: flex-end;
+}
+
+/* --- Action Buttons --- */
+.btn-view, .btn-edit, .btn-delete {
+  padding: 8px 16px;
+  border-radius: 6px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 0.9rem;
+  text-decoration: none;
+  display: inline-block;
+  border: 1px solid transparent;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-view {
+  background-color: transparent;
+  border-color: #007bff;
+  color: #007bff;
+}
+
+.btn-view:hover {
+  background-color: #007bff;
+  color: #fff;
+}
+
+.btn-edit {
+  background-color: transparent;
+  border-color: #ffc107;
+  color: #ffc107;
+}
+
+.btn-edit:hover {
+  background-color: #ffc107;
+  color: #212529;
+}
+
+.btn-delete {
+  background-color: transparent;
+  border-color: #dc3545;
+  color: #dc3545;
+}
+
+.btn-delete:hover {
+  background-color: #dc3545;
+  color: #fff;
+}

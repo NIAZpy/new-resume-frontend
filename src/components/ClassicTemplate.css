@@ -1,0 +1,72 @@
+.classic-template {
+  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  border: 1px solid #ddd;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  background: #fff;
+}
+
+.classic-template .resume-header {
+  text-align: center;
+  border-bottom: 2px solid #333;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.classic-template .resume-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #333;
+}
+
+.classic-template .resume-header p {
+  margin: 0.5rem 0 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.classic-template .resume-section {
+  margin-bottom: 2rem;
+}
+
+.classic-template .resume-section h2 {
+  font-size: 1.5rem;
+  color: #333;
+  border-bottom: 1px solid #ccc;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.classic-template .job, .classic-template .education-item {
+  margin-bottom: 1.5rem;
+}
+
+.classic-template .job h3, .classic-template .education-item h3 {
+  margin: 0;
+  font-size: 1.2rem;
+  color: #444;
+}
+
+.classic-template .job span, .classic-template .education-item span {
+  font-size: 0.9rem;
+  color: #666;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.classic-template .skills-list {
+  list-style-type: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.classic-template .skills-list li {
+  background: #f0f0f0;
+  padding: 5px 10px;
+  border-radius: 5px;
+  font-size: 0.9rem;
+}

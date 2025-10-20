@@ -1,0 +1,112 @@
+/* Main container for the preview pane */
+.preview-pane {
+  background-color: var(--background-color);
+  display: flex;
+  justify-content: center;
+  padding: 40px;
+  overflow-y: auto; /* Allow scrolling for the pane */
+}
+
+.preview-container {
+  background-color: var(--card-background);
+  width: 8.5in;
+  min-height: 11in;
+  padding: 1in;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+  border-radius: 6px;
+}
+
+.resume-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin-bottom: 20px;
+  border: 6px solid var(--card-background);
+  box-shadow: 0 0 15px rgba(0,0,0,0.2);
+}
+
+.resume-header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.resume-header h2 {
+  margin: 0 0 10px 0;
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.contact-info {
+  display: flex;
+  justify-content: center;
+  gap: 10px 25px; /* row-gap and column-gap */
+  flex-wrap: wrap;
+  margin-bottom: 30px;
+  padding-bottom: 30px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.resume-header p,
+.resume-header a {
+  margin: 0;
+  color: var(--secondary-color);
+  font-size: 14px;
+  font-weight: 500;
+  text-decoration: none;
+  transition: color 0.2s;
+}
+
+.resume-header a:hover {
+  color: var(--primary-color);
+}
+
+.resume-section {
+  margin-bottom: 30px;
+}
+
+.resume-section h3 {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--primary-color);
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 2px solid var(--primary-color);
+  padding-bottom: 8px;
+  margin: 0 0 20px 0;
+}
+
+.resume-entry {
+  margin-bottom: 20px;
+}
+
+.resume-entry h4 {
+  margin: 0 0 5px 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: var(--text-color);
+}
+
+.resume-entry p {
+  margin: 2px 0;
+  font-size: 15px;
+  color: var(--secondary-color);
+  line-height: 1.6;
+}
+
+.skills-preview {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skill-tag {
+  background-color: #eef2ff; /* A light blue */
+  color: var(--primary-color);
+  padding: 6px 12px;
+  border-radius: 15px;
+  font-size: 14px;
+  font-weight: 500;
+}
+

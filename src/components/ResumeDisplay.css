@@ -1,0 +1,129 @@
+.resume-display-container {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 2rem;
+  background-color: #fff;
+  border: 1px solid #e0e0e0;
+  border-radius: 8px;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #333;
+}
+
+.resume-header {
+  text-align: center;
+  border-bottom: 2px solid #f0f0f0;
+  padding-bottom: 1rem;
+  margin-bottom: 2rem;
+}
+
+.resume-header h1 {
+  margin: 0;
+  font-size: 2.5rem;
+  color: #2c3e50;
+}
+
+.resume-header p {
+  margin: 0.25rem 0;
+  font-size: 1rem;
+  color: #555;
+}
+
+.resume-links {
+  margin-top: 0.5rem;
+}
+
+.resume-links a {
+  margin: 0 10px;
+  color: #3498db;
+  text-decoration: none;
+}
+
+.resume-links a:hover {
+  text-decoration: underline;
+}
+
+.resume-section {
+  margin-bottom: 2rem;
+}
+
+.resume-section h2 {
+  font-size: 1.5rem;
+  color: #34495e;
+  border-bottom: 2px solid #3498db;
+  padding-bottom: 0.5rem;
+  margin-bottom: 1rem;
+}
+
+.resume-item {
+  margin-bottom: 1.5rem;
+}
+
+.resume-item h3 {
+  margin: 0 0 0.25rem 0;
+  font-size: 1.2rem;
+  color: #2c3e50;
+}
+
+.item-sub-heading {
+  font-style: italic;
+  color: #7f8c8d;
+  margin-bottom: 0.5rem;
+}
+
+.resume-item ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.resume-item li {
+  margin-bottom: 0.25rem;
+  line-height: 1.6;
+}
+
+.skills-list {
+  list-style: none;
+  padding: 0;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.skills-list li {
+  background-color: #ecf0f1;
+  color: #34495e;
+  padding: 5px 12px;
+  border-radius: 15px;
+  margin-right: 10px;
+  margin-bottom: 10px;
+  font-size: 0.9rem;
+}
+
+.error-message {
+  color: #e74c3c;
+  text-align: center;
+  font-size: 1.2rem;
+}
+
+.download-btn-container {
+  text-align: right;
+  margin-bottom: 1rem;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.btn-download {
+  background-color: #28a745;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  font-weight: 500;
+  transition: background-color 0.2s;
+}
+
+.btn-download:hover {
+  background-color: #218838;
+}

@@ -1,0 +1,40 @@
+.analysis-report {
+  text-align: left;
+  padding: 20px;
+  background-color: #f9f9f9;
+  border-radius: 8px;
+}
+
+.report-section {
+  margin-bottom: 25px;
+  border-bottom: 1px solid #eee;
+  padding-bottom: 25px;
+}
+
+.report-section:last-child {
+  border-bottom: none;
+}
+
+.report-section h3 {
+  color: #333;
+  margin-bottom: 15px;
+}
+
+.summary-lists {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.summary-lists h4 {
+  color: #555;
+}
+
+.summary-lists ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.section-score-item, .rewrite-suggestion {
+  margin-bottom: 15px;
+}

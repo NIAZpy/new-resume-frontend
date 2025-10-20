@@ -1,0 +1,67 @@
+:root {
+  --primary-color: #2563eb; /* A modern blue */
+  --secondary-color: #475569; /* A cool gray */
+  --background-color: #f8fafc; /* A very light gray */
+  --card-background: #ffffff;
+  --text-color: #1e293b;
+  --border-color: #e2e8f0;
+}
+.auth-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  background-image: linear-gradient(rgba(247, 250, 252, 0.8), rgba(248, 250, 252, 0.8)), url(https://www.google.com/url?sa=i&url=https%3A%2F%2Fpngtree.com%2Ffree-backgrounds&psig=AOvVaw08k41KaeeZwad9dSZOmq8r&ust=1760581480795000&source=images&cd=vfe&opi=89978449&ved=0CBIQjRxqFwoTCJignaCTpZADFQAAAAAdAAAAABAK);
+  background-size: cover;
+  background-position: center;
+}
+
+.role-selection-card {
+  background: var(--card-background);
+  padding: 50px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  max-width: 700px;
+  text-align: center;
+}
+
+.role-selection-card h2 {
+  margin: 0 0 40px 0;
+  font-size: 28px;
+  font-weight: 700;
+  color: var(--text-color);
+}
+
+.role-options {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 30px;
+}
+
+.role-option {
+  padding: 30px;
+  border: 1px solid var(--border-color);
+  border-radius: 10px;
+  text-decoration: none;
+  color: var(--text-color);
+  transition: all 0.3s ease;
+}
+
+.role-option:hover {
+  border-color: var(--primary-color);
+  box-shadow: 0 8px 25px rgba(37, 99, 235, 0.1);
+  transform: translateY(-5px);
+}
+
+.role-option h3 {
+  margin: 0 0 10px 0;
+  font-size: 20px;
+  font-weight: 600;
+}
+
+.role-option p {
+  color: var(--secondary-color);
+  font-size: 15px;
+  line-height: 1.6;
+}

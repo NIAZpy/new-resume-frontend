@@ -1,0 +1,62 @@
+.applicants-modal {
+  width: 80%;
+  max-width: 800px;
+  padding: 0; /* Remove padding to allow header/footer to span full width */
+}
+
+.applicants-modal h2 {
+  margin: 0;
+  padding: 20px 30px;
+  background-color: #f7f7f9;
+  border-bottom: 1px solid #e0e0e0;
+  border-radius: 8px 8px 0 0;
+  font-size: 1.5rem;
+}
+
+.applicants-modal .modal-actions {
+  padding: 15px 30px;
+  border-top: 1px solid #e0e0e0;
+  background-color: #f7f7f9;
+  border-radius: 0 0 8px 8px;
+  justify-content: flex-end;
+}
+
+.applicants-table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0; /* Remove margin as padding is handled by parent */
+}
+
+.applicants-table th,
+.applicants-table td {
+  padding: 15px 30px;
+  text-align: left;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.applicants-table th {
+  font-weight: 600;
+  color: #555;
+}
+
+.applicants-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.applicants-table tbody tr:hover {
+  background-color: #f8f9fa;
+}
+
+.btn-view-resume {
+  background-color: #28a745;
+  color: white;
+  padding: 6px 12px;
+  border-radius: 4px;
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: background-color 0.2s;
+}
+
+.btn-view-resume:hover {
+  background-color: #218838;
+}
