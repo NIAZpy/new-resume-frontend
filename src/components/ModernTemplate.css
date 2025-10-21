@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+/* General Template Layout */
+.modern-template {
+  font-family: 'Lato', sans-serif;
+  display: flex;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+  max-width: 1000px;
+  margin: 2rem auto;
+  background-color: #fff;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  overflow: hidden; /* To contain floated children */
+}
+
+.modern-sidebar {
+  width: 35%;
+  color: #fff;
+  padding: 40px 30px;
+  background-color: #1a2a41;
+  float: left;
+  border-right: 1px solid #e6e6e6;
+}
+
+.modern-main-content-wrapper {
+  width: 65%;
+  float: left;
+}
+
+.modern-main-content {
+  padding: 40px 50px;
+  background-color: #fff;
+  color: #555;
+  line-height: 1.6;
+}
+
+@media print {
+  .modern-main-content > * {
+    margin-top: 30px;
+  }
+
+  .modern-main-content > *:first-child {
+    margin-top: 0;
+  }
+}
+
+/* ===== Sidebar header (name + role) ===== */
+.sidebar-header { margin-bottom: 18px; }
+.sidebar-header .name {
+  color: #ffffff;
+  font-weight: 700;
+  font-size: 2rem;
+  line-height: 1.2;
+  margin: 0 0 6px 0;
+}
+.sidebar-header .role {
+  color: #cbd6e2;
+  margin: 0 0 16px 0;
+  font-weight: 400;
+}
+
+/* ===== Contact list ===== */
+.contact-list { list-style: none; padding: 0; margin: 0 0 18px 0; }
+.contact-list li { color: #e6edf4; margin: 8px 0; display: flex; align-items: center; gap: 10px; }
+.contact-list li::before { content: none; }
+.contact-list .icon { width: 18px; height: 18px; display: inline-flex; align-items: center; justify-content: center; color: #8fb3d9; flex: 0 0 18px; }
+.contact-list .icon svg { width: 18px; height: 18px; display: block; }
+.contact-list .ci { color: inherit; text-decoration: none; }
+.contact-list .ci:hover { text-decoration: underline; }
+
+/* ===== Sidebar paragraph blocks ===== */
+.sidebar-paragraph { color: #d7e0e8; margin: 8px 0 0; background: rgba(255,255,255,0.06); padding: 10px 12px; border-radius: 4px; }
+
+/* ===== Languages ===== */
+.language-list { list-style: none; padding: 0; margin: 8px 0 0; color: #e6edf4; }
+.language-list li { margin: 4px 0; }
+
+/* ===== Section labels (right) ===== */
+.section-label {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  color: #333;
+  background: #ececec;
+  padding: 8px 12px;
+  border-radius: 4px;
+  border: 1px solid #e0e0e0;
+  margin-bottom: 16px;
+}
+.section-label.inverse {
+  background: #2c4156;
+  color: #ffffff;
+  border-color: transparent;
+}
+
+/* ===== Right column content ===== */
+.modern-main-content h4 { margin: 0 0 2px 0; color: #2b2b2b; }
+.muted { color: #8a8a8a; font-style: italic; margin: 0 0 6px 0; }
+.cert-list { padding-left: 18px; margin: 0; }
+.project-item { margin-bottom: 18px; }
+
+/* ===== Spacing refinements ===== */
+.modern-main-content .modern-section { margin-bottom: 28px; }
+
+/* ... (all other existing styles for profile photo, headers, etc. remain the same) ... */
+
+.profile-photo {
+  width: 150px !important;
+  height: 150px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 30px;
+  display: block;
+  border: 5px solid #fff;
+  box-shadow: 0 0 0 1px #fff;
+}
+
+.modern-section {
+  margin-bottom: 30px;
+}
+
+.modern-sidebar h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #4a5a71;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.modern-main-content .modern-section h3 {
+  font-size: 1.4rem;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+/* Language Section Styles */
+.language-item {
+  margin-bottom: 10px;
+}
+
+.language-item p {
+  margin: 0;
+}
+
+/* Experience & Project Item Styles */
+.work-experience-item h4, .project-item h4 {
+  margin-top: 0;
+  margin-bottom: 5px;
+}
+
+.work-experience-item h5 {
+  margin: 0 0 5px 0;
+  font-weight: normal;
+}
+
+.work-experience-item h5 .company {
+  font-weight: 700;
+  color: #1f2d3a;
+  font-size: 1.05em;
+}
+
+.experience-dates {
+  font-size: 1.05em;
+  color: #4b5563;
+  opacity: 0.9;
+  margin-bottom: 12px;
+  font-weight: 500;
+}
+
+.modern-sidebar .experience-dates {
+  color: #aeb8c4;
+}
+
+/* ... (other styles) ... */
+
+.main-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.work-experience-item {
+  margin-bottom: 25px;
+}
+
+.work-experience-item ul {
+  page-break-inside: auto;
+}
+
+.work-experience-item li {
+  page-break-inside: avoid;
+}
+
+ul, li {
+  page-break-inside: auto;
+}
+
+.pdf-export-view.modern-template {
+  width: 210mm !important;
+  min-height: 297mm !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.pdf-export-view.modern-template .modern-sidebar {
+  padding: 32px 24px;
+}
+
+.pdf-export-view.modern-template .modern-main-content {
+  padding: 32px 32px;
+}
+
+.pdf-export-view .modern-section,
+.pdf-export-view .work-experience-item {
+  page-break-inside: avoid;
+}

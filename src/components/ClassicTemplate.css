@@ -1,24 +1,40 @@
+/* General Template Layout */
 .classic-template {
-  font-family: 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  font-family: 'Georgia', 'Times New Roman', Times, serif;
   max-width: 800px;
   margin: 2rem auto;
-  padding: 2rem;
+  padding: 2.5rem;
   border: 1px solid #ddd;
-  box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   background: #fff;
+  line-height: 1.7;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
 }
 
+/* Header Styling */
 .classic-template .resume-header {
   text-align: center;
   border-bottom: 2px solid #333;
-  padding-bottom: 1rem;
-  margin-bottom: 2rem;
+  padding-bottom: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.classic-template .profile-photo {
+  width: 120px !important;
+  height: 120px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1.5rem;
+  display: block;
+  border: 4px solid #eee;
 }
 
 .classic-template .resume-header h1 {
   margin: 0;
-  font-size: 2.5rem;
-  color: #333;
+  font-size: 2.8rem;
+  color: #222;
+  font-weight: 700;
 }
 
 .classic-template .resume-header p {
@@ -27,35 +43,67 @@
   color: #555;
 }
 
+/* Contact list with icons */
+.classic-template .classic-contact-list {
+  list-style: none;
+  padding: 0;
+  margin: 0.75rem 0 0;
+  display: inline-flex;
+  gap: 16px;
+  align-items: center;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+.classic-template .classic-contact-list li { display: inline-flex; align-items: center; gap: 8px; color: #444; }
+.classic-template .classic-contact-list .icon { width: 16px; height: 16px; color: #555; display: inline-flex; align-items: center; justify-content: center; }
+.classic-template .classic-contact-list .icon svg { width: 16px; height: 16px; display: block; }
+.classic-template .classic-contact-list a { color: #333; text-decoration: none; }
+.classic-template .classic-contact-list a:hover { text-decoration: underline; }
+
+/* Section Styling */
 .classic-template .resume-section {
-  margin-bottom: 2rem;
+  margin-bottom: 2.5rem;
 }
 
 .classic-template .resume-section h2 {
-  font-size: 1.5rem;
+  font-size: 1.6rem;
   color: #333;
-  border-bottom: 1px solid #ccc;
+  border-bottom: 2px solid #333;
   padding-bottom: 0.5rem;
-  margin-bottom: 1rem;
+  margin-bottom: 1.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
 }
 
+/* Item Styling (Experience, Education) */
 .classic-template .job, .classic-template .education-item {
-  margin-bottom: 1.5rem;
+  margin-bottom: 2rem;
 }
 
 .classic-template .job h3, .classic-template .education-item h3 {
   margin: 0;
   font-size: 1.2rem;
-  color: #444;
+  color: #333;
+  font-weight: 600;
 }
 
 .classic-template .job span, .classic-template .education-item span {
-  font-size: 0.9rem;
+  font-size: 1rem;
   color: #666;
   display: block;
+  margin: 0.25rem 0 0.5rem;
+}
+
+.classic-template ul {
+  padding-left: 20px;
+  margin-top: 0.5rem;
+}
+
+.classic-template li {
   margin-bottom: 0.5rem;
 }
 
+/* Skills Section */
 .classic-template .skills-list {
   list-style-type: none;
   padding: 0;
@@ -65,8 +113,26 @@
 }
 
 .classic-template .skills-list li {
-  background: #f0f0f0;
-  padding: 5px 10px;
-  border-radius: 5px;
+  background: #f5f5f5;
+  border: 1px solid #ddd;
+  padding: 8px 15px;
+  border-radius: 20px;
   font-size: 0.9rem;
+  color: #333;
+}
+
+/* --- PDF Export Styles --- */
+.pdf-export-view.classic-template {
+  width: 210mm !important;
+  min-height: 297mm !important;
+  max-width: none !important;
+  margin: 0 !important;
+  box-shadow: none !important;
+  border: none !important;
+}
+
+.pdf-export-view .resume-section,
+.pdf-export-view .job,
+.pdf-export-view .education-item {
+  page-break-inside: avoid;
 }

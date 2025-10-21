@@ -1,3 +1,13 @@
+.profile-photo {
+  width: 90px !important;
+  height: 90px !important;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 1rem;
+  display: block;
+  border: 3px solid #eee;
+}
+
 .resume-display-container {
   max-width: 800px;
   margin: 2rem auto;

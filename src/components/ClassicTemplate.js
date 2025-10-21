@@ -1,7 +1,9 @@
 import React from 'react';
 import './ClassicTemplate.css';
 
-const ClassicTemplate = ({ resume }) => {
+const ClassicTemplate = React.forwardRef((props, ref) => {
+  const { resume, onPhotoClick } = props;
+
   if (!resume) {
     return <div>Loading resume...</div>;
   }
@@ -9,17 +11,25 @@ const ClassicTemplate = ({ resume }) => {
   const { personalInfo, summary, experience, education, skills } = resume;
 
   return (
-    <div className="resume-container classic-template">
+    <div className="resume-container classic-template" ref={ref}>
       <header className="resume-header">
+        {resume.profilePhoto && (
+          <img 
+            src={resume.profilePhoto} 
+            alt="Profile" 
+            className="profile-photo" 
+            onClick={onPhotoClick} 
+            style={{ cursor: 'pointer' }} 
+            crossOrigin="anonymous" // Fix for CORS
+          />
+        )}
         <h1>{personalInfo.name}</h1>
         <p>{personalInfo.email} | {personalInfo.phone} | {personalInfo.address}</p>
       </header>
-
       <section className="resume-section">
         <h2>Summary</h2>
         <p>{summary}</p>
       </section>
-
       <section className="resume-section">
         <h2>Experience</h2>
         {experience.map((exp, index) => (
@@ -30,7 +40,6 @@ const ClassicTemplate = ({ resume }) => {
           </div>
         ))}
       </section>
-
       <section className="resume-section">
         <h2>Education</h2>
         {education.map((edu, index) => (
@@ -40,7 +49,6 @@ const ClassicTemplate = ({ resume }) => {
           </div>
         ))}
       </section>
-
       <section className="resume-section">
         <h2>Skills</h2>
         <ul className="skills-list">
@@ -51,6 +59,6 @@ const ClassicTemplate = ({ resume }) => {
       </section>
     </div>
   );
-};
+});
 
 export default ClassicTemplate;

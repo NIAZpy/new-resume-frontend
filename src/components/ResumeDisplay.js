@@ -1,142 +1,128 @@
-import React from 'react';
+import React, { useState, useRef } from 'react';
+import html2pdf from 'html2pdf.js';
 import useResumeStore from '../stores/resumeStore';
 import ClassicTemplate from './ClassicTemplate';
+import ModernTemplate from './ModernTemplate';
+import ImageModal from './ImageModal';
 import './ResumeDisplay.css';
-import '../print.css';
 
 const ResumeDisplay = () => {
   const { resume, error, isLoading } = useResumeStore();
+  const [isModalOpen, setIsModalOpen] = useState(false);
+  const resumeRef = useRef(null);
+
+  const handlePhotoClick = () => {
+    if (resume.profilePhoto) {
+      setIsModalOpen(true);
+    }
+  };
 
   const handleDownload = () => {
-    const originalTitle = document.title;
-    if (resume && resume.personalInfo && resume.personalInfo.name) {
-      document.title = `${resume.personalInfo.name} - Resume`;
+    console.log("Initiating PDF download process");
+    const element = resumeRef.current;
+    if (!element) {
+      console.error("Resume element not found.");
+      alert("Error: Resume content not found. Please try again.");
+      return;
     }
 
-    window.print();
+    console.log("Generating PDF...");
 
-    // Restore the original title after printing
-    document.title = originalTitle;
+    const opt = {
+      margin: 0,
+      filename: `${resume.personalInfo.name || 'resume'} - Resume.pdf`,
+      image: { type: 'png', quality: 1 },
+      html2canvas: {
+        scale: 3,
+        useCORS: true,
+        logging: false,
+        backgroundColor: '#ffffff',
+        scrollX: 0,
+        scrollY: 0,
+        onclone: (clonedDoc) => {
+          const link = clonedDoc.createElement('link');
+          link.rel = 'stylesheet';
+          link.href = 'https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap';
+          clonedDoc.head.appendChild(link);
+
+          clonedDoc.documentElement.style.margin = '0';
+          clonedDoc.body.style.margin = '0';
+          clonedDoc.body.style.background = '#ffffff';
+
+          const resumeElement = clonedDoc.querySelector('.modern-template') || clonedDoc.querySelector('.classic-template');
+          if (resumeElement) {
+            resumeElement.classList.add('pdf-export-view');
+            resumeElement.style.boxShadow = 'none';
+            resumeElement.style.border = 'none';
+            resumeElement.style.margin = '0';
+            resumeElement.style.width = '210mm';
+            resumeElement.style.minHeight = '297mm';
+
+            const mainContent = clonedDoc.querySelector('.modern-main-content') || resumeElement;
+            try {
+              const resumeTop = resumeElement.getBoundingClientRect().top;
+              const pageHeightPx = Math.round(resumeElement.offsetWidth * (297 / 210));
+              const candidates = mainContent.querySelectorAll('.main-header, .modern-section, .work-experience-item, .resume-section, .job, .education-item, h2, h3, p, ul');
+              for (let i = 0; i < candidates.length; i++) {
+                const el = candidates[i];
+                const top = el.getBoundingClientRect().top - resumeTop;
+                if (top > pageHeightPx - 10) {
+                  const spacer = clonedDoc.createElement('div');
+                  spacer.className = 'pdf-page-break-spacer';
+                  spacer.style.pageBreakBefore = 'always';
+                  spacer.style.breakBefore = 'page';
+                  spacer.style.height = '12mm';
+                  spacer.style.width = '100%';
+                  spacer.style.display = 'block';
+                  mainContent.insertBefore(spacer, el);
+                  break;
+                }
+              }
+            } catch (e) {
+              // noop if measurement fails
+            }
+          }
+        }
+      },
+      jsPDF: { unit: 'mm', format: 'a4', orientation: 'portrait' },
+      pagebreak: { mode: ['css'], before: '.pdf-page-break-spacer' }
+    };
+
+    html2pdf().from(element).set(opt).save()
+      .then(() => {
+        console.log('PDF generated and saved successfully.');
+      })
+      .catch((err) => {
+        console.error('PDF generation failed:', err);
+        alert('Failed to generate PDF. Please check the console for more details.');
+      });
   };
 
   if (isLoading) {
     return <div className="resume-container"><p>Loading...</p></div>;
   }
-
   if (error) {
     return <div className="resume-container"><p className="error-message">{error}</p></div>;
   }
-
   if (!resume) {
-    return (
-      <div className="resume-container">
-        <p>No resume data found. Please create one on your dashboard.</p>
-      </div>
-    );
+    return <div className="resume-container"><p>No resume data found.</p></div>;
   }
-
-  const renderTemplate = () => {
-    if (resume.template === 'classic') {
-      return <ClassicTemplate resume={resume} />;
-    }
-
-    // --- Default Template Fallback ---
-    const { personalInfo, summary, experience, education, skills, projects, links, awards } = resume;
-    return (
-      <div className={`resume-display-container template-default`}>
-        <header className="resume-header">
-          {personalInfo && (
-            <>
-              <h1>{personalInfo.name}</h1>
-              <p>{personalInfo.email} | {personalInfo.phone}</p>
-              <p>{personalInfo.address}</p>
-              {links && links.length > 0 && (
-                <div className="resume-links">
-                  {links.map((link, index) => (
-                    <a key={index} href={link.url} target="_blank" rel="noopener noreferrer">{link.name || 'Link'}</a>
-                  ))}
-                </div>
-              )}
-            </>
-          )}
-        </header>
-
-        {summary && <section className="resume-section"><h2>Summary</h2><p>{summary}</p></section>}
-
-        {experience && experience.length > 0 && (
-          <section className="resume-section">
-            <h2>Experience</h2>
-            {experience.map((job, index) => (
-              <div key={index} className="resume-item">
-                <h3>{job.title} at {job.company}</h3>
-                <p className="item-sub-heading">{job.location} | {job.startDate} - {job.endDate}</p>
-                <ul>
-                  {job.description && job.description.split('\n').map((desc, i) => desc && <li key={i}>{desc}</li>)}
-                </ul>
-              </div>
-            ))}
-          </section>
-        )}
-
-        {education && education.length > 0 && (
-          <section className="resume-section">
-            <h2>Education</h2>
-            {education.map((edu, index) => (
-              <div key={index} className="resume-item">
-                <h3>{edu.institution}</h3>
-                <p className="item-sub-heading">{edu.degree} in {edu.fieldOfStudy}</p>
-                <p>{edu.startDate} - {edu.endDate}</p>
-              </div>
-            ))}
-          </section>
-        )}
-
-        {skills && skills.length > 0 && (
-          <section className="resume-section">
-            <h2>Skills</h2>
-            <ul className="skills-list">
-              {skills.map((skill, index) => <li key={index}>{skill}</li>)}
-            </ul>
-          </section>
-        )}
-
-        {projects && projects.length > 0 && (
-          <section className="resume-section">
-            <h2>Projects</h2>
-            {projects.map((project, index) => (
-              <div key={index} className="resume-item">
-                <h3>{project.name}</h3>
-                <p>{project.description}</p>
-                {project.link && <a href={project.link} target="_blank" rel="noopener noreferrer">View Project</a>}
-              </div>
-            ))}
-          </section>
-        )}
-
-        {awards && awards.length > 0 && (
-          <section className="resume-section">
-            <h2>Awards and Certifications</h2>
-            {awards.map((award, index) => (
-              <div key={index} className="resume-item">
-                <h3>{award.name}</h3>
-                <p>Issued by: {award.issuer}</p>
-                <p>Date: {award.date}</p>
-              </div>
-            ))}
-          </section>
-        )}
-      </div>
-    );
-  };
 
   return (
     <div>
       <div className="download-btn-container">
         <button onClick={handleDownload} className="btn-download">Download as PDF</button>
       </div>
+      
       <div className="resume-container">
-        {renderTemplate()}
+        {resume.template === 'classic' ? (
+          <ClassicTemplate ref={resumeRef} resume={resume} onPhotoClick={handlePhotoClick} />
+        ) : (
+          <ModernTemplate ref={resumeRef} resume={resume} onPhotoClick={handlePhotoClick} />
+        )}
       </div>
+
+      {isModalOpen && <ImageModal src={resume.profilePhoto} onClose={() => setIsModalOpen(false)} />}
     </div>
   );
 };

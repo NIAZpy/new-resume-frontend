@@ -3,31 +3,4 @@
   margin: 0;
 }
 
-@media print {
-  /* Hide everything on the page by default */
-  body * {
-    visibility: hidden;
-  }
-
-  /* Make the resume container and everything inside it visible */
-  .resume-container, .resume-container * {
-    visibility: visible;
-  }
-
-  /* Position the resume at the top-left of the page for printing */
-  .resume-container {
-    position: absolute;
-    left: 0;
-    top: 0;
-    width: 100%;
-    margin: 0;
-    padding: 0;
-    border: none;
-    box-shadow: none;
-  }
-
-  /* Hide the download button itself when printing */
-  .download-btn-container {
-    display: none;
-  }
-}
+/* All print-specific styles are now handled by the html2pdf.js export logic */

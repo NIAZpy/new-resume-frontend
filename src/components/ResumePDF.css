@@ -1,0 +1,126 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@300;400;700&display=swap');
+
+#resume-pdf-content {
+  font-family: 'Lato', sans-serif;
+  width: 210mm; /* A4 width */
+  min-height: 297mm; /* A4 height */
+  display: block;
+  background-color: #1a2a41;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+.pdf-sidebar {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 35%;
+  height: 100%;
+  padding: 40px 30px;
+  color: #fff;
+  box-sizing: border-box;
+}
+
+.pdf-main-content {
+  position: absolute;
+  left: 35%;
+  top: 0;
+  width: 65%;
+  height: 100%;
+  padding: 40px 50px;
+  background-color: #fff;
+  color: #555;
+  box-sizing: border-box;
+}
+
+.pdf-profile-photo {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  object-fit: cover;
+  margin: 0 auto 30px;
+  display: block;
+  border: 5px solid #fff;
+}
+
+.pdf-section {
+  margin-bottom: 30px;
+}
+
+.pdf-sidebar h3 {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  border-bottom: 1px solid #4a5a71;
+  padding-bottom: 10px;
+  margin-bottom: 15px;
+}
+
+.pdf-main-content h3 {
+  font-size: 1.4rem;
+  color: #333;
+  border-bottom: 2px solid #333;
+  padding-bottom: 8px;
+  margin-bottom: 20px;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pdf-header {
+  margin-bottom: 40px;
+}
+
+.pdf-header h1 {
+  font-size: 3rem;
+  margin: 0;
+  font-weight: 700;
+  color: #333;
+}
+
+.pdf-header h2 {
+  font-size: 1.2rem;
+  margin: 5px 0 0;
+  font-weight: 300;
+  color: #777;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+}
+
+.pdf-work-item, .pdf-education-item {
+  page-break-inside: avoid;
+  margin-bottom: 20px;
+}
+
+.pdf-work-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 5px;
+}
+
+.pdf-work-header h4, .pdf-education-item h4 {
+  font-size: 1.1rem;
+  font-weight: 600;
+  margin: 0;
+  color: #444;
+}
+
+.pdf-dates {
+  font-size: 0.9rem;
+  font-style: italic;
+  color: #888;
+}
+
+.pdf-sidebar .pdf-dates {
+  color: #ccc;
+}
+
+ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.pdf-skills-list {
+  list-style: none;
+  padding: 0;
+}

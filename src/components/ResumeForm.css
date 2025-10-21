@@ -4,6 +4,15 @@
   gap: 20px;
 }
 
+.profile-photo-preview {
+  width: 150px;
+  height: 150px;
+  border-radius: 50%;
+  object-fit: cover;
+  border: 3px solid #eee;
+  margin-bottom: 10px;
+}
+
 .form-section {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -89,24 +98,31 @@
   line-height: 1;
 }
 
-.btn-submit-resume {
-  padding: 15px;
-  font-size: 18px;
-  background-color: var(--primary-color);
-  color: white;
-  border: none;
-  border-radius: 4px;
-  cursor: pointer;
+.form-actions {
+  display: flex;
+  gap: 10px;
   margin-top: 20px;
 }
 
-.btn-download-resume {
+.btn-submit-resume, .btn-download-resume {
+  flex: 1;
   padding: 15px;
   font-size: 18px;
+  border-radius: 4px;
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
+}
+
+.btn-submit-resume {
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
+}
+
+.btn-download-resume {
   background-color: #fff;
   color: #28a745;
   border: 2px solid #28a745;
-  transition: all 0.2s ease-in-out;
 }
 
 .btn-download-resume:hover {
