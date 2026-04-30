@@ -1,18 +1,59 @@
-# Getting Started with Create React App
+#  Resume Builder Frontend (React.js)
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+A modern, responsive, and customizable resume builder frontend built using **React.js**, designed to help users create clean, professional resumes with ease.
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+##  Features
+- Real‑time resume preview  
+- Clean and responsive UI  
+- Component‑based architecture  
+- Easy to customize  
+- Supports multiple resume sections  
+- Fast performance with React  
+- Ready for backend API integration  
 
-### `npm start`
+---
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+##  Tech Stack
+- React.js  
+- JavaScript (ES6+)  
+- CSS3  
+- HTML
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+---
 
-### `npm test`
+##  Folder Structure
 
+---
+
+# 🇯🇵 日本語版 README
+
+# 📄 履歴書ビルダー フロントエンド（React.js）
+
+React.js を使用して構築した、モダンでレスポンシブな履歴書作成アプリのフロントエンドです。  
+ユーザーが簡単にプロフェッショナルな履歴書を作成できるように設計されています。
+
+---
+
+##  主な機能
+- リアルタイムプレビュー付き履歴書フォーム  
+- クリーンでレスポンシブな UI  
+- コンポーネントベース構造  
+- カスタマイズが簡単  
+- 複数セクションに対応  
+- 高速パフォーマンス  
+
+---
+
+##  技術スタック
+- React.js  
+- JavaScript  
+- CSS3  
+- HTML5  
+
+---
+
+##  ローカル環境での実行方法
+
+### 1. リポジトリをクローン
